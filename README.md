@@ -2,9 +2,10 @@
 Prueba tecnica CALA analytics.
 
 ## Pasos para ejecutar el proyecto
-- Asegura Python 3.12+ y crea el entorno virtual: `python3 -m venv .venv`
+- Asegura Python 3.12+ y crea el entorno virtual: `python -m venv .venv`
 - Activa el entorno: `source .venv/bin/activate` (Linux/Mac) o `.venv\Scripts\activate` (Windows)
 - Instala Django: `pip install django`
+- ingresa al directorio del proyecto: `cd analytics_portal`
 - Ejecuta migraciones: `python manage.py migrate`
 - Levanta el servidor: `python manage.py runserver`
 
