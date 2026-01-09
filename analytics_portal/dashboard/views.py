@@ -49,3 +49,16 @@ def total_sales_by_client(request):
         "dashboard/total_sales_by_client.html",
         {"titulo": "Total de ventas por cliente", "rows": query},
     )
+
+def top5_clients(request):
+    """ Retorna el queryset con los 5 clientes más vendidos """
+    top5_clients = (
+        DailySales.objects.values("client_id")
+        .annotate(total_sales=Sum("value_sale"))
+        .order_by("-total_sales")[:5]
+    )
+    return render(
+        request,
+        "dashboard/top5_clients.html",
+        {"titulo": "Top 5 Clientes", "rows": top5_clients},
+    )
