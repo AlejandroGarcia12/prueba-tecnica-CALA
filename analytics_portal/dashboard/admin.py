@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from dashboard.models import DailySales
+
+@admin.register(DailySales)
+class DailySalesAdmin(admin.ModelAdmin):
+    list_display = ('date', 'client_id', 'product', 'value_sale')
